@@ -7,6 +7,7 @@ import { isUserLoggedIn, updateCart } from './actions';
 import { useEffect } from 'react';
 import ProductDetailsPage from './containers/ProductDetailsPage';
 import CartPage from './containers/CartPage';
+import CheckoutPage from './containers/CheckoutPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={HomePage}/>
           <Route path="/cart" component={CartPage} />
+          <Route path="/checkout" component={CheckoutPage} />
           <Route
             path="/:productSlug/:productId/p"
             component={ProductDetailsPage}

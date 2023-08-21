@@ -114,7 +114,7 @@ export const updateCart = () => {
             return {
               quantity: cartItems[key].qty,
               product: cartItems[key]._id,
-            };
+            }; 
           }),
         };
         if (Object.keys(cartItems).length > 0) {
