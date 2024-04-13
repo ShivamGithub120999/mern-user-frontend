@@ -6,6 +6,7 @@ import getParams from "../../utils/getParams";
 import ProductPage from "./ProductPage";
 import ProductStore from "./ProductStore";
 import "./style.css";
+import ClothingAndAccessories from "./ClothingAndAccessories";
 
 /**
  * @author
@@ -24,7 +25,7 @@ const ProductListPage = (props) => {
             content = <ProductPage {...props} />;
             break;
           default:
-            content = null;
+            content = <ClothingAndAccessories {...props} />;
         }
 
         return content;

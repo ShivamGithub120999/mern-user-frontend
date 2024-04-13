@@ -29,6 +29,8 @@ const ProductListPage = (props) => {
         under20k: 20000,
         under30k: 30000
     })
+
+    // const priceRange = product.priceRange;
     const dispatch = useDispatch();
     useEffect(() => {
         const { match } = props;

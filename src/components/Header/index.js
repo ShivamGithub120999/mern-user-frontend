@@ -11,7 +11,7 @@ import {
 } from "../MaterialUI";
 import { useDispatch, useSelector } from "react-redux";
 import { login, signout, getCartItems, signup as _signup } from "../../actions";
-//import Cart from "../UI/Cart";
+import Cart from "../UI/Cart";
 
 /**
  * @author
@@ -32,26 +32,26 @@ const Header = (props) => {
   // state cart value
   const cart = useSelector((state) => state.cart);
 
-  // const userSignup = () => {
-  //   const user = { firstName, lastName, email, password };
-  //   if (
-  //     firstName === "" ||
-  //     lastName === "" ||
-  //     email === "" ||
-  //     password === ""
-  //   ) {
-  //     return;
-  //   }
+  const userSignup = () => {
+    const user = { firstName, lastName, email, password };
+    if (
+      firstName === "" ||
+      lastName === "" ||
+      email === "" ||
+      password === ""
+    ) {
+      return;
+    }
 
-  //   dispatch(_signup(user));
-  // };
+    dispatch(_signup(user));
+  };
 
   const userLogin = () => {
-    // if (signup) {
-    //   userSignup();
-    // } else {
+    if (signup) {
+      userSignup();
+    } else {
       dispatch(login({ email, password }));
-    // }
+     }
   };
 
   const logout = () => {
@@ -290,8 +290,8 @@ const Header = (props) => {
           />
           <div>
             <a href={`/cart`} className="cart">
-              <IoIosCart/>
-              {/* <Cart count={Object.keys(cart.cartItems).length} /> */}
+              {/* <IoIosCart/> */}
+              <Cart count={Object.keys(cart.cartItems).length} />
               <span style={{ margin: "0 10px" }}>Cart</span>
             </a>
           </div>

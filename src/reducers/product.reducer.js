@@ -2,6 +2,7 @@ import { productConstants } from "../actions/constants"
 
 const initState = {
     products: [],
+    princeRange:{},
     productsByPrice: {
         under5k: [],
         under10k: [],
@@ -23,6 +24,7 @@ export default (state = initState, action) => {
             state = {
                 ...state,
                 products: action.payload.products,
+                princeRange:action.payload.princeRange,
                 productsByPrice: {
                     ...action.payload.productsByPrice
                 }
